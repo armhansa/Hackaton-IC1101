@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AAA"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/main_activity_margin"
+        tools:context=".activity.RegisterActivity">
+
+    <TextView
+            android:text="Something Else"
+            android:textSize="@dimen/setting_bluetooth_text_size"
+            android:textColor="@color/prototype_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:padding="16dp"/>
+
+    <TextView
+            android:text="Something Else"
+            android:textSize="@dimen/setting_bluetooth_text_size"
+            android:textColor="@color/prototype_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:layout_marginTop="1dp"
+            android:padding="16dp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="16dp"
+            android:background="#FAFAFA">
+
+        <EditText
+                android:id="@+id/etUsername"
+                android:textSize="20sp"
+                android:hint="@string/username_edit_text_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:text="Something Else"
+            android:textSize="@dimen/setting_bluetooth_text_size"
+            android:textColor="@color/prototype_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:layout_marginTop="1dp"
+            android:padding="16dp"/>
+
+    <TextView
+            android:text="Something Else"
+            android:textSize="@dimen/setting_bluetooth_text_size"
+            android:textColor="@color/prototype_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:layout_marginTop="1dp"
+            android:padding="16dp"/>
+
+    <TextView
+            android:text="Something Else"
+            android:textSize="@dimen/setting_bluetooth_text_size"
+            android:textColor="@color/prototype_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:layout_marginTop="1dp"
+            android:padding="16dp"/>
+
+    <TextView
+            android:text="Something Else"
+            android:textSize="@dimen/setting_bluetooth_text_size"
+            android:textColor="@color/prototype_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:layout_marginTop="1dp"
+            android:padding="16dp"/>
+
+    <View
+            android:background="#FAFAFA"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    <Button
+            android:id="@+id/btnRegister"
+            android:text="Register"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"/>
+
+</LinearLayout>

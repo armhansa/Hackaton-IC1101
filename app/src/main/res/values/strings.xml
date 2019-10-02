@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Hackaton</string>
+    <string name="found_device_title">Near Bluetooth device</string>
+    <string name="visible_switch_text_title">Visible to nearby devices</string>
+    <string name="username_edit_text_hint">Insert your username (mock)</string>
+    <string name="discovery_button_text_off">Scan</string>
+    <string name="discovery_button_text_on">Stop</string>
+    <string name="title_activity_life_style">LifeStyleActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>
