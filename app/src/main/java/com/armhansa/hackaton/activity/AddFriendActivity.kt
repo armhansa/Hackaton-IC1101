@@ -21,7 +21,6 @@ class AddFriendActivity : AppCompatActivity() {
             } else {
                 tvUsername.text = it
             }
-
         }
     }
 
