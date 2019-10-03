@@ -28,10 +28,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.OtherMenuActivity"/>
-        <activity android:name=".activity.RegisterActivity"/>
         <activity android:name=".activity.SettingActivity"/>
         <activity android:name=".activity.AroundMeActivity"/>
-        <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.AddFriendActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>

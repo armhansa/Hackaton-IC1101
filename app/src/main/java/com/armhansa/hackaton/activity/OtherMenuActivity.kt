@@ -20,6 +20,7 @@ class OtherMenuActivity : AppCompatActivity() {
                 Intent(this, HomeActivity::class.java)
                     .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             )
+            finish()
         }
     }
 

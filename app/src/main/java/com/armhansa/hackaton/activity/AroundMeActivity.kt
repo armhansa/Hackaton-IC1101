@@ -1,5 +1,6 @@
 package com.armhansa.hackaton.activity
 
+import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.BroadcastReceiver
@@ -8,14 +9,17 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.armhansa.hackaton.R
 import com.armhansa.hackaton.adapter.BluetoothDeviceAdapter
 import com.armhansa.hackaton.basic_api.CallScbApi
+import com.armhansa.hackaton.constant.REQUEST_ENABLE_BLUETOOTH
 import com.armhansa.hackaton.constant.TAG
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.listener.OnBluetoothDeviceItemClick
@@ -23,12 +27,6 @@ import com.armhansa.hackaton.listener.OnCallbackScbApi
 import kotlinx.android.synthetic.main.activity_around_me.*
 
 class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCallbackScbApi {
-
-    companion object {
-        fun startActivity(context: Context) {
-            context.startActivity(Intent(context, AroundMeActivity::class.java))
-        }
-    }
 
     private val bluetoothRvAdapter: BluetoothDeviceAdapter by lazy { BluetoothDeviceAdapter(this) }
     private val bluetoothAdapter: BluetoothAdapter by lazy { BluetoothAdapter.getDefaultAdapter() }
@@ -44,11 +42,7 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
     }
 
     private fun setView() {
-        supportActionBar?.run {
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
-        }
-        discoverBluetoothDevice()
+        checkBluetooth()
         rvBluetoothDevice.run {
             adapter = bluetoothRvAdapter
             layoutManager = LinearLayoutManager(context)
@@ -116,13 +110,7 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
 
     override fun onClickBluetoothItem(btDeviceUsername: String) {
         usernameClicked = btDeviceUsername
-        val accountTo = "524264469873048"/*when (btDeviceUsername) {
-            "vittaya" -> "863064180894994"
-            "ningnoii" -> "524264469873048"
-            "sandwish" -> "1100400881"
-            "armhansa" -> "863064180894994"
-            else -> "524264469873048"
-        }*/
+        val accountTo = "524264469873048"
         makeToast("accountTo is $accountTo", Toast.LENGTH_LONG)
 
         pullToRefresh.isRefreshing = true
@@ -143,6 +131,45 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
 
     private fun gotoDeepLink(deepLink: String?) {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("$deepLink?callback_url=findpay://callback?user=$usernameClicked")))
+    }
+
+    private fun checkBluetooth() {
+        // Get the default adapter
+        if (bluetoothAdapter == null) {
+            alertDialog("Sorry, This device doesn't support bluetooth.")
+        } else if (!bluetoothAdapter?.isEnabled) {
+            val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+            startActivityForResult(enableBtIntent,
+                REQUEST_ENABLE_BLUETOOTH
+            )
+        } else {
+            discoverBluetoothDevice()
+        }
+    }
+
+    private fun alertDialog(message: String) {
+        AlertDialog.Builder(this).apply {
+            setCancelable(false)
+            setMessage(message)
+            setPositiveButton("OK") { _, _ ->
+                finish()
+            }
+            val dialog = this.create()
+            dialog.show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_ENABLE_BLUETOOTH) {
+            if (resultCode == Activity.RESULT_OK) {
+                makeToast("Bluetooth has opened", Toast.LENGTH_LONG)
+                discoverBluetoothDevice()
+            } else if (resultCode == RESULT_CANCELED) {
+                makeToast("Sorry Please open bluetooth for use!", Toast.LENGTH_LONG)
+                Handler().postDelayed({ finish() }, 5000)
+            }
+        }
     }
 
 }

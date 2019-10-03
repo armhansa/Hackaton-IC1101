@@ -33,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
                 Intent(this, OtherMenuActivity::class.java)
                     .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             )
+            finish()
         }
 
     }
