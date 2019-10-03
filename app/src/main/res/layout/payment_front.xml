@@ -5,14 +5,19 @@
               android:layout_height="match_parent">
     <ImageView android:id="@+id/imgPaymentFront"
                android:layout_width="match_parent"
-               android:layout_height="match_parent"
+               android:layout_height="700dp"
                android:src="@drawable/payment_front"
+               android:background="#00F3F0F0"/>
+    <!--<ImageView android:layout_width="match_parent"-->
+               <!--android:layout_height="match_parent"-->
+               <!--android:src="@drawable/ic_money_transfer1"-->
     />
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="435dp"
+            android:layout_marginLeft="0sp"
+            android:layout_marginTop="400dp"
             android:background="#FAFAFA">
 
         <TextView
@@ -20,7 +25,7 @@
                 android:fontFamily="@font/scb_font"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#5C6BC0"
+                android:textColor="#D86816A7"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -38,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" android:textColor="@android:color/tertiary_text_dark"/>
+                android:layout_marginBottom="10dp"/>
 
         <TextView
                 android:text="ประวัติ"
@@ -50,31 +55,29 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" android:textColor="@android:color/tertiary_text_dark"/>
+                android:layout_marginBottom="10dp"/>
 
         <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical" android:background="#FAFAFA">
-
+                android:orientation="vertical"
+                android:background="#FAFAFA">
 
             <Button
                     android:text="รอบตัวฉัน"
                     android:fontFamily="@font/scb_font"
+                    android:layout_width="match_parent"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#FAFAFA" android:textColor="@android:color/tertiary_text_dark"/>
-
-            <View
+                    android:layout_height="match_parent" android:id="@+id/button2"
                     android:background="#FAFAFA"
+                    android:textColor="#9E222020" android:textColorHighlight="#FFFFFF" android:textAllCaps="false"
+                    android:textColorHint="#FFFFFF" android:textColorLink="#FFFFFF" android:textIsSelectable="true"
+                    android:textAlignment="center"/>
+            <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"/>
-
+                    android:layout_height="match_parent"/>
         </LinearLayout>
 
     </LinearLayout>

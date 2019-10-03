@@ -19,13 +19,20 @@
         </activity>
         <activity android:name=".activity.RegisterActivity"/>
         <activity android:name=".activity.SettingActivity"/>
-        <activity
-                android:name=".activity.FindDeviceActivity"
-                android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+        <activity android:name=".activity.FindDeviceActivity"/>
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.PaymentFrontActivity">
+        <intent-filter>
+            <data android:scheme="findpay://"/>
 
+            <action android:name="android.intent.action.MAIN"/>
+
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+
+
+<<<<<<< HEAD
+=======
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -40,6 +47,7 @@
                         android:host="callback"
                         android:scheme="findpay"/>
             </intent-filter>
+>>>>>>> 95f57d645db11c47666ed56da24f389ae96065a8
         </activity>
     </application>
 
