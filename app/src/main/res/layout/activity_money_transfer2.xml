@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/ic_money_transfer1"
+    />
+
+    <ImageView android:layout_width="65dp"
+               android:layout_height="70dp"
+               android:layout_marginTop="310px"
+               android:layout_marginLeft="575px"
+               android:src="@drawable/ic_phone_icon"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="465px"
+              android:layout_marginLeft="585px"
+              android:fontFamily="@font/SCB"
+              android:textSize="21dp"
+              android:text="Benjamin"
+    />
+
+</FrameLayout>
