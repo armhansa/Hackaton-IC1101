@@ -1,61 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              tools:context=".activity.SettingNameActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="54dp"
-                android:layout_height="55dp"
-                app:srcCompat="?attr/actionBarDivider" />
-
-            <ImageView
-                android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-990dp"
-                android:src="@drawable/setting_menu"
-                app:srcCompat="@drawable/setting_menu" />
+                android:orientation="vertical">
+
+            <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="54dp"
+                    android:layout_height="55dp"
+                    app:srcCompat="?attr/actionBarDivider"/>
+
+            <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-970dp"
+                    android:src="@drawable/setting_menu"
+                    app:srcCompat="@drawable/setting_menu"/>
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="415dp"
-                android:layout_marginEnd="318dp"
-                android:fontFamily="@font/scb"
-                android:text="@string/setting_name"
-                android:textColor="@color/color_fake_black"
-                android:textSize="25sp" />
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="425dp"
+                    android:layout_marginEnd="318dp"
+                    android:fontFamily="@font/scb"
+                    android:text="@string/setting_name"
+                    android:textColor="@color/color_fake_black"
+                    android:textSize="25sp"/>
 
             <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="415dp"
-                android:layout_marginEnd="40dp"
-                android:fontFamily="@font/scb"
-                android:text="@string/username"
-                android:textColor="@color/color_fake_black"
-                android:textSize="25sp" />
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="425dp"
+                    android:layout_marginEnd="40dp"
+                    android:fontFamily="@font/scb"
+                    android:text="@string/username"
+                    android:textColor="@color/color_fake_black"
+                    android:textSize="25sp"/>
+
+            <ImageButton
+                    android:id="@+id/btnUsernameSetting"
+                    android:background="@color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="410dp"
+                    android:contentDescription="@string/content_desc"/>
 
         </RelativeLayout>
     </ScrollView>

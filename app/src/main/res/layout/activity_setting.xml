@@ -46,15 +46,21 @@
 
     </LinearLayout>
 
-    <TextView
-            android:text="Something Else"
-            android:textSize="@dimen/setting_bluetooth_text_size"
-            android:textColor="@color/prototype_text_color"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FAFAFA"
             android:layout_marginTop="1dp"
-            android:padding="16dp"/>
+            android:padding="16dp"
+            android:background="#FAFAFA">
+
+        <EditText
+                android:id="@+id/etUsername"
+                android:textSize="20sp"
+                android:hint="@string/username_edit_text_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <TextView
             android:text="Something Else"
@@ -108,14 +114,11 @@
 
     <Button
             android:id="@+id/btnChangeUsername"
-            android:text="Change Username"
-            android:textSize="@dimen/setting_bluetooth_text_size"
-            android:gravity="start|center_vertical"
+            android:text="Change Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="#FAFAFA"/>
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"/>
 
     <View
             android:layout_width="match_parent"

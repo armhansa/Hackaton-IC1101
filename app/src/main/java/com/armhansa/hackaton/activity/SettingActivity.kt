@@ -11,6 +11,7 @@ import com.armhansa.hackaton.R
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.util.SCBPreference
 import kotlinx.android.synthetic.main.activity_setting.*
+import kotlinx.android.synthetic.main.activity_setting.etUsername
 
 class SettingActivity : AppCompatActivity() {
 
@@ -32,8 +33,18 @@ class SettingActivity : AppCompatActivity() {
     }
 
     private fun setView() {
+        val oldUsername = scbPref.getUsername()
+        if (oldUsername != "default") {
+            etUsername.hint = oldUsername
+        }
         btnChangeUsername.setOnClickListener {
-            RegisterActivity.startActivity(this)
+            if (etUsername.text.toString().isNotEmpty()) {
+                scbPref.saveUsername(etUsername.text.toString())
+                scbPref.saveNotFirstTime()
+                onBackPressed()
+            } else {
+                makeToast("Please insert username before!", Toast.LENGTH_LONG)
+            }
         }
         bluetoothAdapter.run {
             switchVisible.isChecked = isDiscovering
@@ -58,7 +69,7 @@ class SettingActivity : AppCompatActivity() {
                 bluetoothAdapter.name = scbPref.getOldBtName()
             }
             bluetoothAdapter.run {
-                Log.d(MainActivity.TAG, "Discovering: $isDiscovering -> ${this.isDiscovering}")
+                Log.d("armhansa=>", "Discovering: $isDiscovering -> ${this.isDiscovering}")
             }
             makeToast(bluetoothAdapter.name, Toast.LENGTH_SHORT)
         }

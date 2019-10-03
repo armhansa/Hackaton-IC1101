@@ -16,11 +16,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        const val TAG = "armhansa=>"
         const val REQUEST_ENABLE_BLUETOOTH = 2403
     }
 
-    private val scbPref by lazy { SCBPreference(this) }
     private val bluetoothAdapter: BluetoothAdapter? by lazy { BluetoothAdapter.getDefaultAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,11 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setView() {
         btnSetting.setOnClickListener {
-            if (scbPref.isFirstTime()) {
-                RegisterActivity.startActivity(this)
-            } else {
-                SettingActivity.startActivity(this)
-            }
+            SettingActivity.startActivity(this)
         }
         btnTransfer.setOnClickListener {
             AroundMeActivity.startActivity(this)

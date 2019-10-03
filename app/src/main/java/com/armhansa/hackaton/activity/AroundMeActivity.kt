@@ -85,8 +85,6 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
                         }
                     }
                     BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
-                        makeToast("Finished", Toast.LENGTH_SHORT)
-//                        pbScanning.isVisible = false
                         pullToRefresh.isRefreshing = false
                     }
                 }
@@ -118,13 +116,13 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
 
     override fun onClickBluetoothItem(btDeviceUsername: String) {
         usernameClicked = btDeviceUsername
-        val accountTo = when (btDeviceUsername) {
+        val accountTo = "524264469873048"/*when (btDeviceUsername) {
             "vittaya" -> "863064180894994"
             "ningnoii" -> "524264469873048"
             "sandwish" -> "1100400881"
             "armhansa" -> "863064180894994"
             else -> "524264469873048"
-        }
+        }*/
         makeToast("accountTo is $accountTo", Toast.LENGTH_LONG)
 
         pullToRefresh.isRefreshing = true
