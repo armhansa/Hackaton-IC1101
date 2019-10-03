@@ -57,6 +57,10 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
         pullToRefresh.setOnRefreshListener {
             discoverBluetoothDevice()
         }
+        btnBackAroundMe.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun discoverBluetoothDevice() {
@@ -71,7 +75,8 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
                         pullToRefresh.isRefreshing = true
                     }
                     BluetoothDevice.ACTION_FOUND -> {
-                        val device: BluetoothDevice? = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)
+                        val device: BluetoothDevice? =
+                            intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)
                         device?.let {
                             it.name?.let { name ->
                                 if (name.startsWith("szb_") && bluetoothRvAdapter.isNew(name.toLowerCase())) {
@@ -142,7 +147,12 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
     }
 
     private fun gotoDeepLink(deepLink: String?) {
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("$deepLink?callback_url=findpay://callback?user=$usernameClicked")))
+        startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("$deepLink?callback_url=findpay://callback?user=$usernameClicked")
+            )
+        )
     }
 
 }

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/payment_front">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/payment_front">
+
+    <ImageButton
+        android:id="@+id/btnBackSelectMethod"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10px"
+        android:background="#00000000"
+        app:srcCompat="?attr/actionBarDivider" />
 
     <LinearLayout
             android:layout_width="match_parent"

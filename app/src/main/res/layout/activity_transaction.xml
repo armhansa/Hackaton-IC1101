@@ -9,6 +9,15 @@
         tools:context=".activity.TransactionActivity">
 
     <ImageButton
+        android:id="@+id/btnBackTransaction"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionBarDivider" />
+
+    <ImageButton
             android:id="@+id/btnSelectMethod"
             android:background="@color/transparent"
             android:layout_width="150dp"

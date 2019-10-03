@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.armhansa.hackaton.R
 import com.armhansa.hackaton.extension.makeToast
 import kotlinx.android.synthetic.main.activity_select_method.*
+import kotlinx.android.synthetic.main.activity_setting_name.*
 
 class SelectMethodActivity : AppCompatActivity() {
 
@@ -16,6 +17,12 @@ class SelectMethodActivity : AppCompatActivity() {
         btnAroundMe.setOnClickListener {
             makeToast("Test", Toast.LENGTH_LONG)
             AroundMeActivity.startActivity(this)
+        }
+    }
+
+    fun setView() {
+        btnBackSelectMethod.setOnClickListener {
+            onBackPressed()
         }
     }
 
