@@ -4,24 +4,92 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <ImageView android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/ic_money_transfer1"
-    />
+    <ImageView android:id="@+id/imgPaymentFront2"
+               android:layout_width="match_parent"
+               android:layout_height="700dp"
+               android:src="@drawable/payment_front"
+               android:background="#00F3F0F0"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0sp"
+            android:layout_marginTop="400dp"
+            android:background="#FAFAFA">
 
+        <TextView
+                android:text="บัญชี"
+                android:fontFamily="@font/scb_font"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#D86816A7"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        <TextView
+                android:text="พร้อมเพย์"
+                android:fontFamily="@font/scb_font"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        <TextView
+                android:text="ประวัติ"
+                android:fontFamily="@font/scb_font"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#FAFAFA">
+
+            <Button
+                    android:text="รอบตัวฉัน"
+                    android:fontFamily="@font/scb_font"
+                    android:layout_width="match_parent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent" android:id="@+id/button2"
+                    android:background="#FAFAFA"
+                    android:textColor="#9E222020" android:textColorHighlight="#FFFFFF" android:textAllCaps="false"
+                    android:textColorHint="#FFFFFF" android:textColorLink="#FFFFFF" android:textIsSelectable="true"
+                    android:textAlignment="center"/>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </LinearLayout>
     <ImageView android:layout_width="65dp"
                android:layout_height="70dp"
-               android:layout_marginTop="310px"
+               android:layout_marginTop="235px"
                android:layout_marginLeft="575px"
                android:src="@drawable/ic_phone_icon"
     />
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginTop="465px"
-              android:layout_marginLeft="585px"
+              android:layout_marginTop="395px"
+              android:layout_marginLeft="600px"
               android:fontFamily="@font/scb_font"
-              android:textSize="21dp"
+              android:textSize="18sp"
               android:text="Benjamin"
     />
 
