@@ -15,6 +15,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:usesCleartextTraffic="true">
+        <activity android:name=".activity.Profile_setting">
+        </activity>
         <activity android:name=".activity.RegisterActivity"/>
         <activity android:name=".activity.SettingActivity"/>
         <activity android:name=".activity.FindDeviceActivity"/>
@@ -29,6 +31,23 @@
         </intent-filter>
 
 
+<<<<<<< HEAD
+=======
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AddFriendActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:host="callback"
+                        android:scheme="findpay"/>
+            </intent-filter>
+>>>>>>> 95f57d645db11c47666ed56da24f389ae96065a8
         </activity>
     </application>
 
