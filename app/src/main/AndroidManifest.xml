@@ -15,6 +15,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:usesCleartextTraffic="true">
+        <activity android:name=".activity.Profile_setting">
+        </activity>
         <activity android:name=".activity.RegisterActivity"/>
         <activity android:name=".activity.SettingActivity"/>
         <activity
@@ -29,10 +31,14 @@
         </activity>
         <activity android:name=".activity.AddFriendActivity">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="findpay" android:host="callback" />
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:host="callback"
+                        android:scheme="findpay"/>
             </intent-filter>
         </activity>
     </application>
