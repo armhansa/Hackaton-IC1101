@@ -20,7 +20,7 @@
               android:layout_height="wrap_content"
               android:layout_marginTop="465px"
               android:layout_marginLeft="585px"
-              android:fontFamily="@font/SCB"
+              android:fontFamily="@font/scb_font"
               android:textSize="21dp"
               android:text="Benjamin"
     />
