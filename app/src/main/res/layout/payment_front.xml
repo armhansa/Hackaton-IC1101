@@ -20,6 +20,7 @@
                 android:fontFamily="@font/SCB"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="#5C6BC0"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -37,7 +38,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp" android:textColor="@android:color/tertiary_text_dark"/>
 
         <TextView
                 android:text="ประวัติ"
@@ -49,29 +50,28 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp" android:textColor="@android:color/tertiary_text_dark"/>
 
         <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical" android:background="#FAFAFA">
 
-            <TextView
+
+            <Button
                     android:text="รอบตัวฉัน"
                     android:fontFamily="@font/SCB"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#5C6BC0"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:background="#FAFAFA" android:textColor="@android:color/tertiary_text_dark"/>
 
             <View
-                    android:background="#5C6BC0"
+                    android:background="#FAFAFA"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"/>
 
