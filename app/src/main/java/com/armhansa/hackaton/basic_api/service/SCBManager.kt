@@ -1,20 +1,22 @@
 package com.example.myapplication.basic_api.service
 
-import com.armhansa.hackaton.interceptor.DeeplinkTransactionHeaderInterceptor
-import com.armhansa.hackaton.service.SCBApiService
+import com.example.myapplication.basic_api.BASE_URL
+import com.example.myapplication.basic_api.Interceptor.DeeplinkTransactionHeaderInterceptor
+import com.example.myapplication.basic_api.Interceptor.HeaderInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
+
 class SCBManager {
+    private lateinit var deeplinkTS: OkHttpClient
 
     companion object {
-        const val BASE_SCB_API = "https://api.partners.scb/partners/sandbox/"
+        const val BASE_SCB_API = BASE_URL
+        var client = OkHttpClient.Builder().addInterceptor(HeaderInterceptor()).build();
 
-        var client = OkHttpClient.Builder().addInterceptor(HeaderInterceptor()).build()
     }
-
-    private lateinit var deeplinkTS: OkHttpClient
 
     fun createService(): SCBApiService =
         Retrofit.Builder()
@@ -25,18 +27,17 @@ class SCBManager {
 
     fun setHeaderDeeplinkTransactionService(accessToken: String) {
 
-        val dl: DeeplinkTransactionHeaderInterceptor = DeeplinkTransactionHeaderInterceptor();
+        val dl = DeeplinkTransactionHeaderInterceptor();
         dl.setAccessToken(accessToken)
         deeplinkTS = OkHttpClient.Builder().addInterceptor(dl).build()
-        println("ningnananoii > dl : $dl")
-    }
+        println("ningnananoii > dl : "+ dl.toString())
 
+    }
     fun createDeeplinkTransactionService(): SCBApiService = Retrofit.Builder()
         .baseUrl(BASE_SCB_API)
         .addConverterFactory(GsonConverterFactory.create())
-        .client(deeplinkTS).build()
+        .client(deeplinkTS as OkHttpClient).build()
         .run { create(SCBApiService::class.java) }
-
 }
 
 

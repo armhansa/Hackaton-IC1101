@@ -1,5 +1,6 @@
-package com.armhansa.hackaton.interceptor
+package com.example.myapplication.basic_api.Interceptor
 
+import com.example.myapplication.basic_api.*
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -14,12 +15,12 @@ class DeeplinkTransactionHeaderInterceptor : Interceptor {
         proceed(
             request()
                 .newBuilder()
-                .addHeader("Content-Type", "application/json")
-                .addHeader("resourceOwnerId", "l7f031d768df40465ba05ae327022a5220")
-                .addHeader("requestUId", "12345")
+                .addHeader("Content-Type", CONTENT_TYPE)
+                .addHeader("resourceOwnerId", API_KEY)
+                .addHeader("requestUId", UID)
                 .addHeader("authorization", "Bearer " + accessToken)
-                .addHeader("accept-language", "EN")
-                .addHeader("channel", "scbeasy")
+                .addHeader("accept-language", LANGUAGE)
+                .addHeader("channel", CHANNEL)
                 .build()
         )
     }

@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.armhansa.hackaton.MainActivity
 import com.armhansa.hackaton.R
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.util.SCBPreference

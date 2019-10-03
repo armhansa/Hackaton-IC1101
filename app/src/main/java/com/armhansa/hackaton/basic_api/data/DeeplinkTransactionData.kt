@@ -1,4 +1,4 @@
-package com.armhansa.hackaton.data
+package com.example.myapplication.basic_api.data
 
 import com.google.gson.annotations.SerializedName
 
@@ -11,4 +11,6 @@ data class DeeplinkTransactionData (
 
     @SerializedName("userRefId")
     val userRefId : String?
-)
+){
+
+}
