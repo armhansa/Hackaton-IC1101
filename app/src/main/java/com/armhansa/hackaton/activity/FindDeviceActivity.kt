@@ -16,14 +16,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.armhansa.hackaton.R
 import com.armhansa.hackaton.adapter.BluetoothDeviceAdapter
 import com.armhansa.hackaton.constant.TAG
-import com.armhansa.hackaton.data.*
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.listener.OnBluetoothDeviceItemClick
-import com.example.myapplication.basic_api.service.SCBManager
 import kotlinx.android.synthetic.main.activity_find_device.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
 
@@ -127,71 +122,7 @@ class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
         }
         makeToast("accountTo is $accountTo", Toast.LENGTH_LONG)
 
-        getToken(accountTo)
-    }
-
-    private fun getToken(billerId: String) {
-        var token: TokenModel
-        val ex = ExampleData(
-            "l7543ffd46de424db4814b1daa245e6fde",
-            "0fd1dea27b5245d4a91996fbf94f9d09"
-        )
-        SCBManager().createService().getToken(exampleData = ex).enqueue(object : Callback<TokenModel> {
-            override fun onFailure(call: Call<TokenModel>, t: Throwable) {
-                makeToast("Error! Can not get token!", Toast.LENGTH_LONG)
-            }
-
-            override fun onResponse(call: Call<TokenModel>, response: Response<TokenModel>) {
-                makeToast("Response Successful", Toast.LENGTH_LONG)
-                Log.d(TAG, response.body().toString())
-                response.body()?.run {
-                    makeToast("${this.data?.accessToken}", Toast.LENGTH_LONG)
-
-                    apiDeeplinkTansaction(this, 500, billerId)
-//                    Handler().postDelayed({ gotoDeepLink("https://www.google.co.th") }, 1000)
-                }
-            }
-        })
-    }
-
-    fun apiDeeplinkTansaction(token: TokenModel, amount: Int, accountTo: String) {
-        val billPayment = BillPaymentModel(amount, accountTo = accountTo)
-        val bodyDeeplink =
-            DeeplinkTransactionBody(billPayment = billPayment, sessionValidUntil = "", sessionValidityPeriod = 60);
-        var deeplink: DeeplinkTransactionModel
-        var scbManager: SCBManager = SCBManager()
-        println("ningnananoii > go to depplink$token")
-        val accessToken: String
-        if (token.data!!.accessToken.isNotEmpty()) {
-            accessToken = token.data.accessToken
-            println("ningnananoii > have access token$accessToken")
-            scbManager.setHeaderDeeplinkTransactionService(accessToken)
-            println("ningnananoii > ::$scbManager")
-        }
-        scbManager.createDeeplinkTransactionService().createsTransaction(body = bodyDeeplink)
-            .enqueue(object : Callback<DeeplinkTransactionModel> {
-
-                override fun onFailure(call: Call<DeeplinkTransactionModel>, t: Throwable) {
-                    println("ningnananoii > deeplink FAILED ! $t")
-
-                }
-
-                override fun onResponse(
-                    call: Call<DeeplinkTransactionModel>,
-                    response: Response<DeeplinkTransactionModel>
-                ) {
-                    println("ningnananoii > depplinkb have data ")
-                    println("ningnanaoii > $response")
-                    response.body()?.apply {
-                        deeplink = this
-                        println("ningnananoii > deeplink have data2 ::$deeplink")
-                    }
-
-
-                }
-
-            })
-
+//        getToken(accountTo)
     }
 
     private fun gotoDeepLink(deepLink: String) {
