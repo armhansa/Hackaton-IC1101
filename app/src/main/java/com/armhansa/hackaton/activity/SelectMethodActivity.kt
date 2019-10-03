@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.armhansa.hackaton.R
 import kotlinx.android.synthetic.main.activity_select_method.*
+import kotlinx.android.synthetic.main.activity_setting_name.*
 
 class SelectMethodActivity : AppCompatActivity() {
 
@@ -18,6 +19,12 @@ class SelectMethodActivity : AppCompatActivity() {
                     .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             )
             finish()
+        }
+    }
+
+    fun setView() {
+        btnBackSelectMethod.setOnClickListener {
+            onBackPressed()
         }
     }
 
