@@ -1,4 +1,4 @@
-package com.armhansa.hackaton
+package com.armhansa.hackaton.activity
 
 import android.app.Activity
 import android.bluetooth.BluetoothAdapter
@@ -8,9 +8,7 @@ import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.armhansa.hackaton.activity.FindDeviceActivity
-import com.armhansa.hackaton.activity.RegisterActivity
-import com.armhansa.hackaton.activity.SettingActivity
+import com.armhansa.hackaton.R
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.util.SCBPreference
 import kotlinx.android.synthetic.main.activity_main.*
@@ -54,7 +52,9 @@ class MainActivity : AppCompatActivity() {
         }
         if (bluetoothAdapter?.isEnabled == false) {
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BLUETOOTH)
+            startActivityForResult(enableBtIntent,
+                REQUEST_ENABLE_BLUETOOTH
+            )
         }
     }
 
