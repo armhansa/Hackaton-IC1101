@@ -26,6 +26,7 @@
         <TextView
                 android:id="@+id/tvUsername"
                 tools:text="ArmHansa"
+                android:fontFamily="@font/scb_font"
                 android:textColor="#000"
                 android:textSize="30sp"
                 android:maxLines="1"

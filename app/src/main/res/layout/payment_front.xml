@@ -5,14 +5,15 @@
               android:layout_height="match_parent">
     <ImageView android:id="@+id/imgPaymentFront"
                android:layout_width="match_parent"
-               android:layout_height="match_parent"
+               android:layout_height="700dp"
                android:src="@drawable/payment_front"
-    />
+               android:background="#00F3F0F0"/>
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="435dp"
+            android:layout_marginLeft="0sp"
+            android:layout_marginTop="400dp"
             android:background="#FAFAFA">
 
         <TextView
@@ -20,6 +21,7 @@
                 android:fontFamily="@font/scb_font"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="#5C6BC0"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -55,26 +57,23 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="#FAFAFA">
 
-            <TextView
+            <Button
                     android:text="รอบตัวฉัน"
                     android:fontFamily="@font/scb_font"
+                    android:layout_width="match_parent"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#5C6BC0"
-                    android:gravity="center"
+                    android:layout_height="match_parent" android:id="@+id/button2"
+                    android:background="#FAFAFA"
+                    android:textColor="#9E222020" android:textColorHighlight="#FFFFFF" android:textAllCaps="false"
+                    android:textColorHint="#FFFFFF" android:textColorLink="#FFFFFF" android:textIsSelectable="true"
+                    android:textAlignment="center"/>
+            <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"/>
-
-            <View
-                    android:background="#5C6BC0"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"/>
-
+                    android:layout_height="match_parent"/>
         </LinearLayout>
 
     </LinearLayout>

@@ -3,9 +3,5 @@
     <font
             android:fontStyle="normal"
             android:fontWeight="400"
-<<<<<<< HEAD
-            android:font="@font/SCB" />
-=======
             android:font="@font/scb_font" />
->>>>>>> 037eeff1c9f682ebeca9228dddcfde046d6d8647
 </font-family>
