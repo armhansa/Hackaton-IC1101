@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="prototype_text_color">#DADADA</color>
+    <color name="colorDarkGray">#736D78</color>
+    <color name="colorFakeBlack">#353239</color>
 </resources>
