@@ -15,13 +15,20 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.armhansa.hackaton.R
 import com.armhansa.hackaton.adapter.BluetoothDeviceAdapter
+import com.armhansa.hackaton.basic_api.CallScbApi
 import com.armhansa.hackaton.constant.TAG
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.listener.OnBluetoothDeviceItemClick
-import com.example.myapplication.basic_api.api
+import com.armhansa.hackaton.listener.OnCallbackScbApi
+import com.example.myapplication.basic_api.SESSION_TIME
+import com.example.myapplication.basic_api.data.*
+import com.example.myapplication.basic_api.service.SCBManager
 import kotlinx.android.synthetic.main.activity_find_device.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
+class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCallbackScbApi {
 
     companion object {
         fun startActivity(context: Context) {
@@ -32,6 +39,8 @@ class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
     private val bluetoothRvAdapter: BluetoothDeviceAdapter by lazy { BluetoothDeviceAdapter(this) }
     private val bluetoothAdapter: BluetoothAdapter by lazy { BluetoothAdapter.getDefaultAdapter() }
     private lateinit var mReceiver: BroadcastReceiver
+
+    private var usernameClicked = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,6 +123,7 @@ class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
     }
 
     override fun onClickBluetoothItem(btDeviceUsername: String) {
+        usernameClicked = btDeviceUsername
         val accountTo = when (btDeviceUsername) {
             "vittaya" -> "863064180894994"
             "ningnoii" -> "524264469873048"
@@ -122,12 +132,25 @@ class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
             else -> "524264469873048"
         }
         makeToast("accountTo is $accountTo", Toast.LENGTH_LONG)
-        api().testApi(accountTo)
-//        getToken(accountTo)
+
+        pullToRefresh.isRefreshing = true
+        CallScbApi(this).getToken(accountTo)
     }
 
-    private fun gotoDeepLink(deepLink: String) {
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(deepLink)))
+    override fun toastError(throwable: Throwable) {
+        makeToast(throwable.message, Toast.LENGTH_SHORT)
+    }
+
+    override fun callbackDeeplink(deepLink: String?) {
+        gotoDeepLink(deepLink)
+    }
+
+    override fun setLoading(isLoading: Boolean) {
+        pullToRefresh.isRefreshing = isLoading
+    }
+
+    private fun gotoDeepLink(deepLink: String?) {
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("$deepLink?callback_url=findpay://callback?user=$usernameClicked")))
     }
 
 }
