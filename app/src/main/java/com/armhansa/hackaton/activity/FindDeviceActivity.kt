@@ -18,6 +18,7 @@ import com.armhansa.hackaton.adapter.BluetoothDeviceAdapter
 import com.armhansa.hackaton.constant.TAG
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.listener.OnBluetoothDeviceItemClick
+import com.example.myapplication.basic_api.api
 import kotlinx.android.synthetic.main.activity_find_device.*
 
 class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
@@ -121,7 +122,7 @@ class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick {
             else -> "524264469873048"
         }
         makeToast("accountTo is $accountTo", Toast.LENGTH_LONG)
-
+        api().testApi(accountTo)
 //        getToken(accountTo)
     }
 
