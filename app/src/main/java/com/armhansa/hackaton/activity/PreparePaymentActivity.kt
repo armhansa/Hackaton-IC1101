@@ -9,9 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.armhansa.hackaton.R
 import com.armhansa.hackaton.constant.TAG
+import com.armhansa.hackaton.data.ExampleData
 import com.armhansa.hackaton.data.TokenModel
 import com.armhansa.hackaton.extension.makeToast
-import com.example.myapplication.basic_api.data.ExampleData
 import com.example.myapplication.basic_api.service.SCBManager
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,7 +47,7 @@ class PreparePaymentActivity : AppCompatActivity() {
                 Log.d(TAG, response.body().toString())
                 response.body()?.apply {
                     makeToast("Data is not empty", Toast.LENGTH_LONG)
-                    this.data1
+                    this.data
                 }
             }
         })

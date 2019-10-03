@@ -1,7 +1,6 @@
-package com.example.myapplication.basic_api.data
+package com.armhansa.hackaton.data
 
-data class ExampleData(val applicationKey : String,
-                       val applicationSecret: String
-                       ) {
-
-}
+data class ExampleData(
+    val applicationKey: String,
+    val applicationSecret: String
+)
