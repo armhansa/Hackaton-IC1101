@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.armhansa.hackaton.R
 import kotlinx.android.synthetic.main.activity_profile_setting.*
+import kotlinx.android.synthetic.main.activity_setting_name.*
 
 class SettingName : AppCompatActivity() {
 
@@ -18,7 +19,13 @@ class SettingName : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting_name)
+        setView()
 
+    }
+    fun setView() {
+        btnBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
 }
