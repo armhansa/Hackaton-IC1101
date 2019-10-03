@@ -20,19 +20,13 @@ import com.armhansa.hackaton.constant.TAG
 import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.listener.OnBluetoothDeviceItemClick
 import com.armhansa.hackaton.listener.OnCallbackScbApi
-import com.example.myapplication.basic_api.SESSION_TIME
-import com.example.myapplication.basic_api.data.*
-import com.example.myapplication.basic_api.service.SCBManager
-import kotlinx.android.synthetic.main.activity_find_device.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.android.synthetic.main.activity_around_me.*
 
-class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCallbackScbApi {
+class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCallbackScbApi {
 
     companion object {
         fun startActivity(context: Context) {
-            context.startActivity(Intent(context, FindDeviceActivity::class.java))
+            context.startActivity(Intent(context, AroundMeActivity::class.java))
         }
     }
 
@@ -44,7 +38,7 @@ class FindDeviceActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_find_device)
+        setContentView(R.layout.activity_around_me)
 
         setView()
     }

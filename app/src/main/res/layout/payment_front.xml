@@ -75,9 +75,6 @@
                     android:textColor="#9E222020" android:textColorHighlight="#FFFFFF" android:textAllCaps="false"
                     android:textColorHint="#FFFFFF" android:textColorLink="#FFFFFF" android:textIsSelectable="true"
                     android:textAlignment="center"/>
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
         </LinearLayout>
 
     </LinearLayout>

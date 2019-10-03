@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/screen_mock_search"
-        tools:context=".activity.SelectMethodActivity">
+        android:background="@drawable/payment_front">
 
-    <ImageButton
-            android:id="@+id/btnHome"
-            android:background="@color/transparent"
-            android:layout_width="90dp"
-            android:layout_height="80dp"
-            android:layout_alignParentBottom="true"
-            android:contentDescription="@string/content_desc"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0sp"
+            android:layout_marginTop="420dp"
+            android:background="#FAFAFA">
 
-</RelativeLayout>
+        <TextView
+                android:text="บัญชี"
+                android:fontFamily="@font/scb_font"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#D86816A7"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        <TextView
+                android:text="พร้อมเพย์"
+                android:fontFamily="@font/scb_font"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        <TextView
+                android:text="ประวัติ"
+                android:fontFamily="@font/scb_font"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#FAFAFA">
+
+            <Button
+                    android:id="@+id/btnAroundMe"
+                    android:text="รอบตัวฉัน"
+                    android:fontFamily="@font/scb_font"
+                    android:layout_width="match_parent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:background="#FAFAFA"
+                    android:textColor="#9E222020"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

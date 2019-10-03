@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.AroundMeActivity">
 
-    <ImageView android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/payment_front"
-    />
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:src="@drawable/payment_front"
+            android:background="#00F3F0F0"
+            android:contentDescription="@string/content_desc"/>
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0sp"
-            android:layout_marginTop="400dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="410dp"
             android:background="#FAFAFA">
 
         <TextView
@@ -21,7 +26,6 @@
                 android:fontFamily="@font/scb_font"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#D86816A7"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -53,30 +57,36 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"/>
 
-        <LinearLayout
+        <TextView
+                android:text="รอบตัวฉัน"
+                android:fontFamily="@font/scb_font"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#D86816A7"
+                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="#FAFAFA">
-
-            <Button
-                    android:text="รอบตัวฉัน"
-                    android:fontFamily="@font/scb_font"
-                    android:layout_width="match_parent"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="match_parent" android:id="@+id/button2"
-                    android:background="#FAFAFA"
-                    android:textColor="#9E222020" android:textColorHighlight="#FFFFFF" android:textAllCaps="false"
-                    android:textColorHint="#FFFFFF" android:textColorLink="#FFFFFF" android:textIsSelectable="true"
-                    android:textAlignment="center"/>
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-        </LinearLayout>
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_alignParentBottom="true">
 
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBluetoothDevice"
+                tools:listitem="@layout/item_bluetooth_username"
+                tools:itemCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:background="#DDD"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

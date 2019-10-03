@@ -2,8 +2,8 @@ package com.armhansa.hackaton.activity
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.armhansa.hackaton.R
 import kotlinx.android.synthetic.main.activity_transaction.*
 
@@ -22,7 +22,8 @@ class TransactionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_transaction)
 
         btnSelectMethod.setOnClickListener {
-            SelectMethodActivity.startActivity(this)
+            startActivity(Intent(this, SelectMethodActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION))
         }
 
     }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activity.TestActivity">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,8 +41,8 @@
                 android:layout_marginEnd="318dp"
                 android:fontFamily="@font/scb"
                 android:text="@string/setting_name"
-                android:textColor="@color/colorFakeBlack"
-                android:textSize="25dp" />
+                android:textColor="@color/color_fake_black"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/name"
@@ -55,8 +54,8 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/scb"
                 android:text="@string/username"
-                android:textColor="@color/colorFakeBlack"
-                android:textSize="25dp" />
+                android:textColor="@color/color_fake_black"
+                android:textSize="25sp" />
 
         </RelativeLayout>
     </ScrollView>

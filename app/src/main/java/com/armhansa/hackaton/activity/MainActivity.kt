@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         btnTransfer.setOnClickListener {
-            FindDeviceActivity.startActivity(this)
+            AroundMeActivity.startActivity(this)
         }
     }
 

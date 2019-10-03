@@ -17,10 +17,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activity.SelectMethodActivity">
-        </activity>
-        <activity android:name=".activity.TransactionActivity">
-        </activity>
+        <activity android:name=".activity.TransactionActivity"/>
         <activity
                 android:name=".activity.HomeActivity"
                 android:screenOrientation="portrait">
@@ -33,22 +30,17 @@
         <activity android:name=".activity.OtherMenuActivity"/>
         <activity android:name=".activity.RegisterActivity"/>
         <activity android:name=".activity.SettingActivity"/>
-        <activity
-                android:name=".activity.FindDeviceActivity"
-                android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.AroundMeActivity"/>
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.AddFriendActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
-
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-
-                <data
-                        android:host="callback"
-                        android:scheme="findpay"/>
+                <data android:scheme="findpay" android:host="callback"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.SelectMethodActivity"/>
     </application>
 
 </manifest>
