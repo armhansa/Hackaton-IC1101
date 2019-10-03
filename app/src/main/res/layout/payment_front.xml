@@ -8,6 +8,10 @@
                android:layout_height="700dp"
                android:src="@drawable/payment_front"
                android:background="#00F3F0F0"/>
+    <!--<ImageView android:layout_width="match_parent"-->
+               <!--android:layout_height="match_parent"-->
+               <!--android:src="@drawable/ic_money_transfer1"-->
+    />
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -21,7 +25,7 @@
                 android:fontFamily="@font/scb_font"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#5C6BC0"
+                android:textColor="#D86816A7"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
