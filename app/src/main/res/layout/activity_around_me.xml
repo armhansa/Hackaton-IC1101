@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/payment_front"
-        tools:context=".activity.AroundMeActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/payment_front"
+    android:orientation="vertical"
+    tools:context=".activity.AroundMeActivity">
 
-<<<<<<< Updated upstream
-=======
     <ImageButton
         android:id="@+id/btnBackAroundMe"
         android:layout_width="58dp"
@@ -18,84 +15,83 @@
         app:srcCompat="?attr/actionBarDivider" />
 
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="700dp"
-            android:src="@drawable/payment_front"
-            android:background="#00F3F0F0"
-            android:contentDescription="@string/content_desc"/>
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:background="#00F3F0F0"
+        android:contentDescription="@string/content_desc"
+        android:src="@drawable/payment_front" />
 
->>>>>>> Stashed changes
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="420dp"
-            android:background="#FAFAFA">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:background="#FAFAFA">
 
         <TextView
-                android:text="บัญชี"
-                android:fontFamily="@font/scb_font"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/scb_font"
+            android:gravity="center"
+            android:text="บัญชี"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-                android:text="พร้อมเพย์"
-                android:fontFamily="@font/scb_font"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/scb_font"
+            android:gravity="center"
+            android:text="พร้อมเพย์"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-                android:text="ประวัติ"
-                android:fontFamily="@font/scb_font"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/scb_font"
+            android:gravity="center"
+            android:text="ประวัติ"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-                android:text="รอบตัวฉัน"
-                android:fontFamily="@font/scb_font"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#D86816A7"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/scb_font"
+            android:gravity="center"
+            android:text="รอบตัวฉัน"
+            android:textColor="#D86816A7"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/pullToRefresh"
-            android:layout_width="match_parent"
-            android:layout_height="260dp"
-            android:layout_alignParentBottom="true">
+        android:id="@+id/pullToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentBottom="true">
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvBluetoothDevice"
-                tools:listitem="@layout/item_bluetooth_username"
-                tools:itemCount="2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="4dp"
-                android:background="#DDD"/>
+            android:id="@+id/rvBluetoothDevice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#DDD"
+            android:padding="4dp"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_bluetooth_username" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
