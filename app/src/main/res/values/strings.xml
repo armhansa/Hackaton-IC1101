@@ -11,4 +11,6 @@
     <string name="content_desc">Image Description</string>
     <string name="setting_name">ชื่อผู้ใช้</string>
     <string name="username">ningnoii</string>
+    <string name="consent_add_friend">อนุญาติให้เพิ่ม ningnoii เป็นเพื่อน</string>
+    <string name="consent_connect">อนุญาติให้เพิ่ม ningnoii เป็นเพื่อน</string>
 </resources>
