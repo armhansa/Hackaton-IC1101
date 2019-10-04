@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Hackaton</string>
     <string name="found_device_title">Near Bluetooth device</string>
-    <string name="visible_switch_text_title">Visible to nearby devices</string>
-    <string name="username_edit_text_hint">Insert your username (mock)</string>
+    <string name="visible_switch_text_title">เปิดให้ผู้ใช้รอบตัวสามารถโอนเงินได้</string>
+    <string name="username_edit_text_hint">โปรดใส่ชื่อผู้ใช้</string>
     <string name="discovery_button_text_off">Scan</string>
     <string name="discovery_button_text_on">Stop</string>
     <string name="title_activity_life_style">LifeStyleActivity</string>
@@ -11,6 +11,6 @@
     <string name="content_desc">Image Description</string>
     <string name="setting_name">ชื่อผู้ใช้</string>
     <string name="username">ningnoii</string>
-    <string name="consent_add_friend">อนุญาติให้เพิ่ม ningnoii เป็นเพื่อน</string>
+    <string name="consent_add_friend">อนุญาติให้เพิ่ม %1$s เป็นเพื่อน</string>
     <string name="consent_connect">อนุญาติให้เพิ่ม ningnoii เป็นเพื่อน</string>
 </resources>

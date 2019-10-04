@@ -17,8 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ConsentConnect"></activity>
-        <activity android:name=".activity.ConsentAddFriendActivity" />
+        <activity android:name=".activity.ConsentConnectActivity"/>
         <activity android:name=".activity.TransactionActivity" />
         <activity
             android:name=".activity.HomeActivity"
@@ -30,7 +29,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.OtherMenuActivity" />
-        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.SettingActivity"
+                  android:theme="@style/AppTheme"/>
         <activity android:name=".activity.AroundMeActivity" />
         <activity android:name=".activity.AddFriendActivity">
             <intent-filter>
@@ -39,9 +39,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data
-                    android:host="callback"
-                    android:scheme="findpay" />
+                <data android:scheme="findpay" android:host="callback"/>
             </intent-filter>
         </activity>
         <activity android:name=".activity.SelectMethodActivity" />

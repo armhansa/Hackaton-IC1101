@@ -1,98 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/payment_front"
-    android:orientation="vertical"
-    tools:context=".activity.AroundMeActivity">
-
-    <ImageButton
-        android:id="@+id/btnBackAroundMe"
-        android:layout_width="58dp"
-        android:layout_height="50dp"
-        app:srcCompat="?attr/actionBarDivider" />
-
-    <ImageView
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:background="#00F3F0F0"
-        android:contentDescription="@string/content_desc"
-        android:src="@drawable/payment_front" />
+        android:layout_height="match_parent"
+        android:background="@drawable/payment_front"
+        android:orientation="vertical"
+        tools:context=".activity.AroundMeActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
-        android:background="#FAFAFA">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="420dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:background="#FAFAFA">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/scb_font"
-            android:gravity="center"
-            android:text="บัญชี"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/scb_font"
+                android:gravity="center"
+                android:text="บัญชี"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/scb_font"
-            android:gravity="center"
-            android:text="พร้อมเพย์"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/scb_font"
+                android:gravity="center"
+                android:text="พร้อมเพย์"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/scb_font"
-            android:gravity="center"
-            android:text="ประวัติ"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/scb_font"
+                android:gravity="center"
+                android:text="ประวัติ"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/scb_font"
-            android:gravity="center"
-            android:text="รอบตัวฉัน"
-            android:textColor="#D86816A7"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/scb_font"
+                android:gravity="center"
+                android:text="รอบตัวฉัน"
+                android:textColor="#D86816A7"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
     </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/pullToRefresh"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_alignParentBottom="true">
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_alignParentBottom="true">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvBluetoothDevice"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DDD"
-            android:padding="4dp"
-            tools:itemCount="2"
-            tools:listitem="@layout/item_bluetooth_username" />
+                android:id="@+id/rvBluetoothDevice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DDD"
+                android:padding="4dp"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_bluetooth_username"/>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ImageButton
+            android:id="@+id/btnBackAroundMe"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            android:contentDescription="@string/content_desc"/>
+
+    <ImageButton
+            android:id="@+id/btnMockConnect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/transparent"
+            android:contentDescription="@string/content_desc"/>
 
 </RelativeLayout>

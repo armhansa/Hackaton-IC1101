@@ -33,6 +33,11 @@ class SettingActivity : AppCompatActivity() {
     }
 
     private fun setView() {
+        title = "ตั้งค่าโอนเงิน"
+        supportActionBar?.run {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
         val oldUsername = scbPref.getUsername()
         if (oldUsername != "default") {
             etUsername.hint = oldUsername
@@ -43,7 +48,7 @@ class SettingActivity : AppCompatActivity() {
                 scbPref.saveNotFirstTime()
                 onBackPressed()
             } else {
-                makeToast("Please insert username before!", Toast.LENGTH_LONG)
+                finish()
             }
         }
         bluetoothAdapter.run {
@@ -53,7 +58,7 @@ class SettingActivity : AppCompatActivity() {
             val isDiscovering = bluetoothAdapter.isDiscovering
             if (b) {
                 bluetoothAdapter.apply {
-                    if (scbPref.getOldBtName() == null) {
+                    scbPref.getOldBtName()?.let { name ->
                         scbPref.saveOldBtName(name)
                     }
                     val username = scbPref.getUsername()
@@ -73,6 +78,11 @@ class SettingActivity : AppCompatActivity() {
             }
             makeToast(bluetoothAdapter.name, Toast.LENGTH_SHORT)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

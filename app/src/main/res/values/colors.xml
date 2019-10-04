@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#4F2A81</color>
     <color name="colorAccent">#D81B60</color>
     <color name="prototype_text_color">#DADADA</color>
-    <color name="transparent">#2000</color>
+    <color name="transparent">#0000</color>
     <color name="color_fake_black">#353239</color>
 </resources>

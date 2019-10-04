@@ -3,8 +3,10 @@ package com.armhansa.hackaton.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.armhansa.hackaton.R
+import com.armhansa.hackaton.extension.makeToast
 import com.armhansa.hackaton.util.SCBPreference
 import kotlinx.android.synthetic.main.activity_setting_name.*
 

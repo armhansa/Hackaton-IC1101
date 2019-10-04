@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/consent"
         tools:context=".activity.AddFriendActivity">
+
+    <ImageButton
+            android:id="@+id/btnBackConsentAddFriend"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            android:contentDescription="@string/content_desc"/>
+
+    <ImageButton
+            android:id="@+id/btnCancelAddFriend"
+            android:layout_width="174dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="221dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00FFFFFF"
+            app:srcCompat="?attr/actionBarDivider"
+            android:contentDescription="@string/content_desc"/>
+
+    <ImageButton
+            android:id="@+id/btnAcceptAddFriend"
+            android:layout_width="174dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="11dp"
+            android:background="#00FFFFFF"
+            app:srcCompat="?attr/actionBarDivider"
+            android:contentDescription="@string/content_desc"/>
 
     <TextView
             android:id="@+id/tvUsername"
-            android:text="TEST"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            tools:text="@string/consent_add_friend"
+            android:textColor="@color/color_fake_black"
+            android:fontFamily="@font/scb"
+            android:textSize="25sp"
+            android:layout_width="387dp"
+            android:layout_height="459dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="11dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -8,12 +8,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
+import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.armhansa.hackaton.R
@@ -33,6 +35,7 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
     private lateinit var mReceiver: BroadcastReceiver
 
     private var usernameClicked = ""
+    private var accountTo: String = "524264469873048"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +57,9 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
         btnBackAroundMe.setOnClickListener {
             onBackPressed()
         }
-
+        btnMockConnect.setOnClickListener {
+            callApi()
+        }
     }
 
     private fun discoverBluetoothDevice() {
@@ -115,11 +120,10 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
 
     override fun onClickBluetoothItem(btDeviceUsername: String) {
         usernameClicked = btDeviceUsername
-        val accountTo = "524264469873048"
-        makeToast("accountTo is $accountTo", Toast.LENGTH_LONG)
+        accountTo = "524264469873048"
 
         pullToRefresh.isRefreshing = true
-        CallScbApi(this).getToken(accountTo)
+        btnMockConnect.isVisible = true
     }
 
     override fun toastError(throwable: Throwable) {
@@ -134,6 +138,10 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
         pullToRefresh.isRefreshing = isLoading
     }
 
+    private fun callApi() {
+        CallScbApi(this).getToken(accountTo)
+    }
+
     private fun gotoDeepLink(deepLink: String?) {
         startActivity(
             Intent(
@@ -143,11 +151,11 @@ class AroundMeActivity : AppCompatActivity(), OnBluetoothDeviceItemClick, OnCall
         )
     }
 
-    private fun checkBluetooth() {
+    fun checkBluetooth() {
         // Get the default adapter
         if (bluetoothAdapter == null) {
             alertDialog("Sorry, This device doesn't support bluetooth.")
-        } else if (!bluetoothAdapter?.isEnabled) {
+        } else if (!bluetoothAdapter.isEnabled) {
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
             startActivityForResult(enableBtIntent,
                 REQUEST_ENABLE_BLUETOOTH
